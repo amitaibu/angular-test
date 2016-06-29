@@ -8,14 +8,16 @@
  */
 angular.module('angularTestApp')
   .directive('myDirective', function () {
-    scope: {
-      some: "="
-    }
     return {
-      template: 'Val: Is: {{ some}}',
+      scope: {
+        some: "="
+      },
+      template: 'Val : {{ some}}',
       link: function postLink(scope, element, attrs) {
         setInterval(function () {
-          scope.some += 1;
+          scope.$apply(function() {
+            scope.some += 1;
+          });
       }, 100);
 
       }
