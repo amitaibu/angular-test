@@ -15,7 +15,7 @@ angular.module('angularTestApp')
       'Karma'
     ];
 
-    $scope.some = 100;
+    $scope.someVal = 100;
 
 
   });

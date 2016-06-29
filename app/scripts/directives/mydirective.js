@@ -10,13 +10,13 @@ angular.module('angularTestApp')
   .directive('myDirective', function () {
     return {
       scope: {
-        some: "="
+        someVal: "="
       },
-      template: 'Val : {{ some}}',
+      template: 'Val : {{ someVal }}',
       link: function postLink(scope, element, attrs) {
         setInterval(function () {
           scope.$apply(function() {
-            scope.some += 1;
+            scope.someVal += 1;
           });
       }, 100);
 
